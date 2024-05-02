@@ -3,26 +3,22 @@
 
 const { ipcRenderer, contextBridge } = require("electron");
 const { platform } = require("os");
-const { keyboard, Key } = require("@nut-tree/nut-js");
+import robot from "@jitsi/robotjs";
 
 const next = async () => {
-  await console.log("NEXT!!");
-  await keyboard.type(Key.Down);
+  robot.keyTap("down");
 };
 
 const previous = async () => {
-  console.log("PREV!!");
-  await keyboard.type(Key.Up);
+  robot.keyTap("up");
 };
 
 const firstSlide = async () => {
-  console.log("FirstSlide!!");
-  await keyboard.type(Key.Home);
+  robot.keyTap("home");
 };
 
 const lastSlide = async () => {
-  console.log("FirstSlide!!");
-  await keyboard.type(Key.End);
+  robot.keyTap("end");
 };
 
 // Exposing functions to app
